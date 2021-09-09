@@ -1,3 +1,3 @@
 # Patroller
 
-Python application/script that tracks changees within a website using sellenium
+Python application/script that tracks changes within a website using sellenium
