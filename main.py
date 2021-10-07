@@ -13,7 +13,8 @@ CHROME_DRIVER_PATH = os.getenv('CHROME_DRIVER_PATH')
 DELAY = 60 * 30  # 30 minutes
 SENDER_EMAIL = 'botpatroller@gmail.com'
 PASSWORD = os.getenv('PASSWORD')
-RECIPIENT_EMAILS = ['joeyzhou7002@gmail.com', 'karenehk@gmail.com', 'angelina.mow@gmail.com']
+# RECIPIENT_EMAILS = ['joeyzhou7002@gmail.com', 'karenehk@gmail.com', 'angelina.mow@gmail.com']
+RECIPIENT_EMAILS = ['joeyzhou7002@gmail.com']
 HTML_TEMPLATE = """<p>Hello,</p>
 
 
@@ -49,7 +50,7 @@ def run():
         content = driver.find_elements_by_class_name('entry-content')[0].text
         if prev_content != content:
             logging.info(f'Contents changed:\n{prev_content} \n\n to \n\n {content}')
-            mail = MIMEText(HTML_TEMPLATE.format(URL, prev_content, content), 'html')
+            mail = MIMEText(HTML_TEMPLATE.format(URL, prev_content.replace('\n', '<br>'), content.replace('\n', '<br>')), 'html')
             mail['Subject'] = 'Vanier Website Changes Detected'
             mail_str = mail.as_string()
             server = smtplib.SMTP_SSL('smtp.gmail.com', 465, context=ssl.create_default_context())
