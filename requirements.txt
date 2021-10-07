@@ -21,6 +21,6 @@ soupsieve==2.2.1
 tqdm==4.62.2
 urllib3==1.26.6
 w3lib==1.22.0
-websockets==10.0
+websockets
 wheel==0.37.0
 zipp==3.5.0

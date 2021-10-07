@@ -13,8 +13,7 @@ CHROME_DRIVER_PATH = os.getenv('CHROME_DRIVER_PATH')
 DELAY = 60 * 30  # 30 minutes
 SENDER_EMAIL = 'botpatroller@gmail.com'
 PASSWORD = os.getenv('PASSWORD')
-# RECIPIENT_EMAILS = ['joeyzhou7002@gmail.com', 'karenehk@gmail.com', 'angelina.mow@gmail.com']
-RECIPIENT_EMAILS = ['joeyzhou7002@gmail.com']
+RECIPIENT_EMAILS = ['joeyzhou7002@gmail.com', 'karenehk@gmail.com', 'angelina.mow@gmail.com']
 HTML_TEMPLATE = """<p>Hello,</p>
 
 
